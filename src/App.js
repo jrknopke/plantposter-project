@@ -15,9 +15,9 @@ function App() {
         <div>
           <NavBar/>
           <Switch>
-            <Route path = "/home" render = {(routerProps) => <Home {...routerProps} />}/>
-            <Route path = "/plants" render = {(routerProps) => <Plants {...routerProps}/>}/>
-            <Route path = "/plants/new" render = {(routerProps) => <PlantForm {...routerProps}/>}/>
+            <Route exact path = "/home" render = {(routerProps) => <Home {...routerProps} />}/>
+            <Route exact path = "/plants" render = {(routerProps) => <Plants {...routerProps}/>}/>
+            <Route exact path = "/plants/new" render = {(routerProps) => <PlantForm {...routerProps}/>}/>
           </Switch>
         </div>
       </Router>
