@@ -1,8 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route} from "react-router-dom"
-import { Switch } from "react-router"
-import Home from "./components/Home"
+import { BrowserRouter as Router, Route} from "react-router-dom";
+import { Switch } from "react-router";
+import Home from "./components/Home";
+import Plants from "./containers/Plants";
+import PlantForm from './components/PlantForm';
+import NavBar from "./components/NavBar";
 
 
 function App() {
@@ -10,10 +13,11 @@ function App() {
     <div className="App">
       <Router>
         <div>
+          <NavBar/>
           <Switch>
-            <Route path="/home" render = {(routerprops) => <Home/>}/>
-            <Route path="/plants"/>
-            <Route path="/plants/new"/>
+            <Route path = "/home" render = {(routerProps) => <Home {...routerProps} />}/>
+            <Route path = "/plants" render = {(routerProps) => <Plants {...routerProps}/>}/>
+            <Route path = "/plants/new" render = {(routerProps) => <PlantForm {...routerProps}/>}/>
           </Switch>
         </div>
       </Router>
