@@ -13,9 +13,17 @@ export class Plants extends Component {
         return (
             <div>
                 <h1>Plants</h1>
+                {}
             </div>
         );
     }
 }
 
-export default connect(null, { fetchPlants } )(Plants);
+const mapStateToProps = ({plantsReducer}) => {
+    return {
+        plants: plantsReducer.plants,
+        requesting: plantsReducer.requesting
+    }
+}
+
+export default connect(mapStateToProps, { fetchPlants } )(Plants);
