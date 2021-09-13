@@ -13,7 +13,7 @@ function App() {
           <Switch>
             <Route path="/home" render = {(routerprops) => <Home/>}/>
             <Route path="/plants"/>
-            <Route path="plants/new"/>
+            <Route path="/plants/new"/>
           </Switch>
         </div>
       </Router>
