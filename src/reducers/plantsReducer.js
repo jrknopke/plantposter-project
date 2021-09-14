@@ -1,11 +1,10 @@
-const plantsReducer = (state = {plants: [], requesting: false}, action) => {
+const plantsReducer = (state = {plants: [], requesting: true}, action) => {
     switch (action.type) {
         case "START_FETCH_PLANTS":
             return {
                 ...state,
                 requesting: true
             }
-            break;
 
         case "ADD_PLANTS":
             return {
@@ -13,10 +12,10 @@ const plantsReducer = (state = {plants: [], requesting: false}, action) => {
                 requesting: false,
                 plants: [...action.plants]
             }
-            break;
 
         default:
             return state
-            break;
-    }
+   }
 }
+
+export default plantsReducer

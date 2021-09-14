@@ -13,7 +13,7 @@ export class Plants extends Component {
         return (
             <div>
                 <h1>Plants</h1>
-                {}
+                {this.props.requesting ? <h1>Loading...</h1> : this.props.plants.map(plant => <h3>{plant.name} </h3>)}
             </div>
         );
     }
