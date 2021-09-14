@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Plant.create(name: 'Daffodil', color: 'yellow')
+Plant.create(name: 'Lavender', color: 'purple')
