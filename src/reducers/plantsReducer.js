@@ -18,4 +18,4 @@ const plantsReducer = (state = {plants: [], requesting: true}, action) => {
    }
 }
 
-export default plantsReducer
+// export default plantsReducer

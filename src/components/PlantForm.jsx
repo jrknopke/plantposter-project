@@ -10,4 +10,4 @@ export class PlantForm extends Component {
     }
 }
 
-export default PlantForm;
+export default connect(null, mapDispatchToProps)(PlantForm);

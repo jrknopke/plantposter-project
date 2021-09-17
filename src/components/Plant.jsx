@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { fetchPlants } from '../actions/plants';
 
 class Plants extends Component  {
 
@@ -19,9 +20,13 @@ class Plants extends Component  {
 
 };
 
-const mapStateToProps = state => {
+const mapDispatchToProps = (dispatch) => {
+    return { fetchPlants: () => dispatch(fetchPlants())}
+}
+
+const mapStateToProps = (state) => {
     return { plants: state.plants }
 }
 
 
-export default connect (mapStateToProps)(Plants);
+export default connect (mapStateToProps, mapDispatchToProps)(Plants);
