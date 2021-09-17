@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Switch } from "react-router";
 import Home from "./components/Home";
-import Plants from "./containers/Plants";
+import Plants from "./components/Plant";
 import PlantForm from './components/PlantForm';
 import NavBar from "./components/NavBar";
 

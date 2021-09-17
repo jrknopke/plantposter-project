@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const Plant  = (props) => {
-    return (
-        <div>
+class Plants extends Component  {
 
-        </div>
-    )
+    render() {
+
+        let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
+
+        return(
+            <div>
+                <ul>
+                    {plants}
+                </ul>
+            </div>
+        );
+    
+    }
+
+};
+
+const mapStateToProps = state => {
+    return { plants: state.plants }
 }
 
-export default Plant
+
+export default connect (mapStateToProps)(Plants);
