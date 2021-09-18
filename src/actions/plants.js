@@ -8,3 +8,10 @@ export const fetchPlants = () =>{
         })
     }
 }
+
+export const addPlant = (plant) => {
+    return {
+        type: "ADD_PLANTS", 
+        plant
+    };
+}
