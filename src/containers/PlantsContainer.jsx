@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Plant from '../components/Plant';
 
 import { fetchPlants } from '../actions/plants';
 
@@ -21,6 +22,7 @@ export class PlantsContainer extends Component {
         return (
             <div>
                 <h1>Plants</h1>
+                <Plant />
             </div>
         );
     }

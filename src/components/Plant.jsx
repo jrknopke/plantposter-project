@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPlants } from '../actions/plants';
 
-class Plants extends Component  {
+class Plant extends Component  {
 
     render() {
 
-         let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
+        let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
 
         return(
             <div>
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect (mapStateToProps, mapDispatchToProps)(Plants);
+export default connect (mapStateToProps, mapDispatchToProps)(Plant);
