@@ -6,7 +6,7 @@ class Plants extends Component  {
 
     render() {
 
-        let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
+         let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
 
         return(
             <div>
