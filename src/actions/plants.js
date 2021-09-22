@@ -4,14 +4,14 @@ export const fetchPlants = () =>{
         fetch("http://localhost:3001/plants")
         .then(resp => resp.json())
         .then(plants => {
-            dispatch({type: "ADD_PLANTS", plants})
+            dispatch({type: "ADD_PLANTS", payload: plants})
         })
     }
 }
 
-export const addPlant = (plant) => {
-    return {
-        type: "ADD_PLANTS", 
-        plant
-    };
-}
+// export const addPlant = (plant) => {
+//     return {
+//         type: "ADD_PLANTS", 
+//         plant
+//     };
+// }

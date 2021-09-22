@@ -1,32 +1,41 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchPlants } from '../actions/plants';
+import React from 'react';
 
-class Plant extends Component  {
+const Plant = ({plant}) =>
+    <div>
+        <h3> {plant.name} </h3>
+        <p> {plant.color} </p>
+        <br></br>
+    </div>
 
-    render() {
+export default Plant
+// import { connect } from 'react-redux'
+// import { fetchPlants } from '../actions/plants';
 
-        let plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
+// class Plant extends Component  {
 
-        return(
-            <div>
-                <ul>
-                    {plants}
-                </ul>
-            </div>
-        );
+//     render() {
+
+//         const plants = this.props.plants.map((plant, index) => <li key={index}> {plant.name} </li>);
+
+//         return(
+//             <div>
+//                 <ul>
+//                     {plants}
+//                 </ul>
+//             </div>
+//         );
     
-    }
+//     }
 
-};
+// };
 
-const mapDispatchToProps = (dispatch) => {
-    return { fetchPlants: () => dispatch(fetchPlants())}
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return { fetchPlants: () => dispatch(fetchPlants())}
+// }
 
-const mapStateToProps = (state) => {
-    return { plants: state.plants }
-}
+// const mapStateToProps = (state) => {
+//     return { plants: state.plants }
+// }
 
 
-export default connect (mapStateToProps, mapDispatchToProps)(Plant);
+// export default connect (mapStateToProps, mapDispatchToProps)(Plant);

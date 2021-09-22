@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addPlant } from '../actions/plants';
+import { fetchPlants } from '../actions/plants';
 import { connect } from 'react-redux';
 
 export class PlantForm extends Component {
@@ -40,7 +40,7 @@ export class PlantForm extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         addPlant: (newPlant) => {
-            dispatch(addPlant(newPlant))
+            dispatch(fetchPlants(newPlant))
         }
     }
 }

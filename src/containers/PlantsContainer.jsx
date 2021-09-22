@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Plant from '../components/Plant';
+// import React, { Component } from 'react';
+// import { connect } from 'react-redux';
+// import Plant from '../components/Plant';
 
-import { fetchPlants } from '../actions/plants';
+// import { fetchPlants } from '../actions/plants';
 
-export class PlantsContainer extends Component {
+// export class PlantsContainer extends Component {
     
-    constructor(){
-        super();
+//     constructor(){
+//         super();
 
-        this.state = {
-            plants: []
-        };
-    }
+//         this.state = {
+//             plants: []
+//         };
+//     }
 
-    componentDidMount(){
-        this.props.fetchPlants()
-    }
+//     componentDidMount(){
+//         this.props.fetchPlants()
+//     }
     
-    render() {
-        return (
-            <div>
-                <h1>Plants</h1>
-                <Plant />
-            </div>
-        );
-    }
-}
+//     render() {
+//         return (
+//             <div>
+//                 <h1>Plants</h1>
+//                 <Plant />
+//             </div>
+//         );
+//     }
+// }
 
-const mapStateToProps = ({plantsReducer}) => {
-    return {
-        plants: plantsReducer.plants,
-        requesting: plantsReducer.requesting
-    }
-}
+// const mapStateToProps = ({plantsReducer}) => {
+//     return {
+//         plants: plantsReducer.plants,
+//         requesting: plantsReducer.requesting
+//     }
+// }
 
-export default connect(mapStateToProps, { fetchPlants } )(PlantsContainer);
+// export default connect(mapStateToProps, { fetchPlants } )(PlantsContainer);
