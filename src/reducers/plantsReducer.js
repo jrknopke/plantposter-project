@@ -1,5 +1,5 @@
 export default function plantsReducer(
-    state = {all: [], requesting: false}, action) {
+    state = {all: [], requesting: true}, action) {
     switch (action.type) {
         case "START_FETCH_PLANTS":
             return {

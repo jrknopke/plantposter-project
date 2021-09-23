@@ -15,16 +15,16 @@ class PlantList extends Component {
         return(
         <div>
             <h2> Plants </h2>
-            <ul>
-                {plants.map((plant) => 
-                    <Plant key = {plant.id} plant = {plant}/>)};
-            </ul>
+            <div>
+                {plants.map((plant) => <Plant key = {plant.id} plant = {plant}/>)}
+            </div>
         </div>
         )
     };
 };
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
         plants: state.plants.all
     }
