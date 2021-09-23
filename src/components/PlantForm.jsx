@@ -4,14 +4,32 @@ import { connect } from 'react-redux';
 
 export class PlantForm extends Component {
 
-    state = {
-        name: '',
-        color: ''
+    constructor(props){
+        super(props)
+
+        this.state = {
+            name: '',
+            color: ''
+        }
+    }
+
+    handleOnChange = event => {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        })
     }
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.addPlant(this.state);
+        this.props.addPlant(this.state.name, this.state.color)
+        this.setState({
+            name: '',
+            color: ''
+        })
     }
 
     render() {
@@ -20,14 +38,18 @@ export class PlantForm extends Component {
                 <form onSubmit={(event)=>this.handleOnSubmit(event)}>
                     <p>
                         <input
+                        name="name"
                         type="text"
                         value={this.state.name}
+                        onChange={(event) => this.handleOnChange(event)}
                         placeholder="plant name" />
                     </p>
                     <p>
                         <input
+                        name="color"
                         type="text"
                         value={this.state.color}
+                        onChange={(event) => this.handleOnChange(event)}
                         placeholder="plant color" />
                     </p>
                     <input type="submit" />
