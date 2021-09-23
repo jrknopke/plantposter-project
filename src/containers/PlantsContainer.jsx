@@ -1,38 +1,37 @@
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import Plant from '../components/Plant';
+import React, {Component} from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { fetchPlants } from '../actions/plants';
+import Plant from '../components/Plant';
 
-// import { fetchPlants } from '../actions/plants';
+class PlantsContainer extends Component {
+    componentDidMount(){
+        this.props.fetchPlants()
+    }
 
-// export class PlantsContainer extends Component {
-    
-//     constructor(){
-//         super();
+    render(){
+        const { plants } = this.props
 
-//         this.state = {
-//             plants: []
-//         };
-//     }
+        return(
+        <div>
+            <h2> Plants </h2>
+            <div>
+                {plants.map((plant) => <Plant key = {plant.id} plant = {plant}/>)}
+            </div>
+        </div>
+        )
+    };
+};
 
-//     componentDidMount(){
-//         this.props.fetchPlants()
-//     }
-    
-//     render() {
-//         return (
-//             <div>
-//                 <h1>Plants</h1>
-//                 <Plant />
-//             </div>
-//         );
-//     }
-// }
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        plants: state.plants.all
+    }
+}
 
-// const mapStateToProps = ({plantsReducer}) => {
-//     return {
-//         plants: plantsReducer.plants,
-//         requesting: plantsReducer.requesting
-//     }
-// }
+const mapDispatchToProps = dispatch => bindActionCreators({
+    fetchPlants
+}, dispatch)
 
-// export default connect(mapStateToProps, { fetchPlants } )(PlantsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(PlantsContainer);
