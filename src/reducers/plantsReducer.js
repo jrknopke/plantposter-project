@@ -7,7 +7,14 @@ export default function plantsReducer(
                 requesting: true
             }
 
-        case "ADD_PLANTS":
+        case "LOAD_PLANTS":
+            return {
+                ...state,
+                requesting: false,
+                all: action.payload
+            }
+
+        case "ADD_PLANT":
             return {
                 ...state,
                 requesting: false,
