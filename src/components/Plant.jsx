@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Plant = ({plant}) =>
-    <div>
+    
+    <div class="a" >
         <h3> {plant.name} </h3>
-        <p> {plant.color} </p>
+        <h4> {plant.family} </h4>
+        <p > {plant.color} </p>
         <br></br>
     </div>
 

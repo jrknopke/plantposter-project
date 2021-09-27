@@ -6,6 +6,7 @@ export class PlantForm extends Component {
 
     state = {
         name: "",
+        family: "",
         color: ""
     }
 
@@ -21,9 +22,10 @@ export class PlantForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.createPlant(this.state.name, this.state.color)
+        this.props.createPlant(this.state)
         this.setState({
             name: '',
+            family: '',
             color: ''
         })
         this.props.history.push('/plants');
@@ -32,14 +34,26 @@ export class PlantForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={(event)=>this.handleOnSubmit(event)}>
+                <form onSubmit={this.handleOnSubmit}>
                     <p>
                         <input
                         name="name"
                         type="text"
                         value={this.state.name}
                         onChange={(event) => this.handleOnChange(event)}
-                        placeholder="plant name" />
+                        placeholder="Plant Name" />
+                    </p>
+                    <p>
+                        <label> Family: </label>
+                        <select
+                        name = "family"
+                        type = "select"
+                        value = {this.state.family}
+                        onChange = {(event) => this.handleOnChange(event)}>
+                            <option value="tree"> Tree </option>
+                            <option value="flower"> Flower </option>
+                            <option value="food"> Food </option>
+                        </select>
                     </p>
                     <p>
                         <input
@@ -47,21 +61,13 @@ export class PlantForm extends Component {
                         type="text"
                         value={this.state.color}
                         onChange={(event) => this.handleOnChange(event)}
-                        placeholder="plant color" />
+                        placeholder="Plant Color" />
                     </p>
-                    <input type="submit" />
+                    <input type="submit" value="ADD PLANT"/>
                 </form>
             </div>
         );
     }
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         addPlant: (newPlant) => {
-//             dispatch(addPlant(newPlant))
-//         }
-//     }
-// }
 
 export default connect(null, {createPlant})(PlantForm);

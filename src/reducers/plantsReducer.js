@@ -15,11 +15,10 @@ export default function plantsReducer(
             }
 
         case "ADD_PLANT":
-            // const plant = { name: action.name, color: action.color}
             return {
                 ...state,
                 requesting: false,
-                all: action.payload
+                all: [...state.all, action.payload]
             }
         default:
             return state
