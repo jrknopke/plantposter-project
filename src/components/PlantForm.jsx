@@ -25,11 +25,12 @@ export class PlantForm extends Component {
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.addPlant(this.state.name, this.state.color)
+        this.props.createPlant(this.state)
         this.setState({
             name: '',
             color: ''
         })
+        this.props.history.push('/plants');
     }
 
     render() {
