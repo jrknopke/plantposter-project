@@ -3,9 +3,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import { Switch } from "react-router";
 import Home from "./components/Home";
 import PlantForm from './components/PlantForm';
-// import PlantsContainer from './containers/PlantsContainer';
 import NavBar from "./components/NavBar";
-// import PlantList from './components/PlantList';
 import PlantsContainer from './containers/PlantsContainer';
 
 

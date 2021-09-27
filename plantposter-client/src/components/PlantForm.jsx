@@ -28,7 +28,7 @@ export class PlantForm extends Component {
             family: '',
             color: ''
         })
-        // this.props.history.push('/plants');
+        this.props.history.push('/plants');
     }
 
     render() {

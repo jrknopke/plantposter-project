@@ -4,11 +4,7 @@ import { deletePlant } from '../actions/plants';
 
 const DeleteButton = (props) => {
 
-    // debugger
-    
     let plant = props.plant
-
-    
 
     const handleDelete = (plant) => {
         props.deletePlant(plant.id)
