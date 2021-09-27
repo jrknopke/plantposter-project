@@ -1,12 +1,16 @@
 import React from 'react';
+import DeleteButton from './DeleteButton';
 
-const Plant = ({plant}) =>
+export default function Plant(props) {
+    const { name, family, color } = props.plant
     
+    return(
     <div className="a" >
-        <h3> {plant.name} </h3>
-        <h4> {plant.family} </h4>
-        <p > {plant.color} </p>
+        <h3> {name} </h3>
+        <h4> {family} </h4>
+        <p > {color} </p>
         <br></br>
+        <DeleteButton plant={props.plant}/>
     </div>
-
-export default Plant
+    )
+}

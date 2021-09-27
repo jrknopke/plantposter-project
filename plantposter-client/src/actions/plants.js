@@ -31,3 +31,12 @@ export const createPlant = (plant) => {
         })
     }
 }
+
+export const deletePlant = (id) => {
+    return (dispatch) => {
+        dispatch({type: "DELETE_PLANT", payload: id});
+        fetch(`http://localhost:3001/plants/${id}`, {
+        method: "DELETE",
+        })
+    }
+}

@@ -20,6 +20,12 @@ export default function plantsReducer(
                 requesting: false,
                 all: [...state.all, action.payload]
             }
+
+        case "DELETE_PLANT":
+            return {
+                all: state.all.filter(plant => plant.id !== action.payload)
+            }
+        
         default:
             return state
    }
