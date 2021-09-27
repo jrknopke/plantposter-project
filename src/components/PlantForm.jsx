@@ -1,31 +1,27 @@
 import React, { Component } from 'react';
-import { addPlant, fetchPlants } from '../actions/plants';
+import { createPlant } from '../actions/plants';
 import { connect } from 'react-redux';
 
 export class PlantForm extends Component {
 
-    constructor(props){
-        super(props)
+    state = {
+        name: "",
+        color: ""
+    }
 
-        this.state = {
-            name: '',
-            color: ''
-        }
+    constructor(){
+        super();
+        this.handleOnChange.bind(this);
+        this.handleOnSubmit.bind(this);
     }
 
     handleOnChange = event => {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        })
+        this.setState({[event.target.name]: [event.target.value]})
     }
 
     handleOnSubmit = event => {
         event.preventDefault();
-        this.props.createPlant(this.state)
+        this.props.createPlant(this.state.name, this.state.color)
         this.setState({
             name: '',
             color: ''
@@ -60,12 +56,12 @@ export class PlantForm extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addPlant: (newPlant) => {
-            dispatch(addPlant(newPlant))
-        }
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         addPlant: (newPlant) => {
+//             dispatch(addPlant(newPlant))
+//         }
+//     }
+// }
 
-export default connect(null, mapDispatchToProps)(PlantForm);
+export default connect(null, {createPlant})(PlantForm);

@@ -10,13 +10,14 @@ class PlantsContainer extends Component {
     }
 
     render(){
-        const { plants } = this.props
-
+        // debugger;
+        const plants = this.props.plants.map((plant) => <Plant plant = {plant}/>)
+        
         return(
         <div>
             <h2> Plants </h2>
             <div>
-                {plants.map((plant) => <Plant key = {plant.id} plant = {plant}/>)}
+                { plants }
             </div>
         </div>
         )
@@ -24,7 +25,6 @@ class PlantsContainer extends Component {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         plants: state.plants.all
     }
