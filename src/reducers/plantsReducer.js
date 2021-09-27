@@ -1,27 +1,27 @@
-export default function plantsReducer(
-    state = {all: [], requesting: false}, action) {
-    switch (action.type) {
-        case "START_FETCH_PLANTS":
-            return {
-                ...state,
-                requesting: true
-            }
+const initialState = {
+    plants: [],
+    requesting: false
+}
 
-        case "LOAD_PLANTS":
+const plantsReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case "GET_PLANTS":
             return {
                 ...state,
-                requesting: false,
-                all: action.payload
+                plants: [...state.plants, ...action.payload],
+                requesting: true
             }
 
         case "ADD_PLANT":
             return {
                 ...state,
-                requesting: false,
-                all: action.payload
+                plants: [...state.plants, action.payload],
+                requesting: false
             }
 
         default:
             return state
    }
 }
+
+export default plantsReducer;
