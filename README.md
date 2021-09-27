@@ -1,4 +1,4 @@
-PLANTPOSTER is a app for creating different plants.
+PLANTPOSTER is an app for creating different plants.
 
 To use, clone this repo, then:
 
@@ -8,7 +8,8 @@ To use, clone this repo, then:
 
 Once the front end server is running:
 1. navigate to ```plantposter-api``` subdirectory 
-2. Run ```rails s```
+2. Run ```rails db:migrate``` and ```rails db:seed```
+3. Run ```rails s```
 
 Fill out the form to make a new plant or look over the present plants.
 
