@@ -8,3 +8,6 @@
 
 Plant.create(name: 'Daffodil', family: "flower", color: 'yellow')
 Plant.create(name: 'Lavender', family: "flower", color: 'purple')
+Plant.create(name: 'Pine', family: 'tree', color: 'green')
+Plant.create(name: 'Oak', family: 'tree', color: 'green')
+Plant.create(name: 'Orchid', family: 'flower', color: 'red')
