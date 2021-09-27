@@ -11,7 +11,7 @@ class PlantsContainer extends Component {
 
     render(){
         // debugger;
-        const plants = this.props.plants.map((plant) => <Plant key= {plant.id} plant = {plant}/>)
+        const plants = this.props.plants.map((plant) => <Plant key= {plant.name} plant = {plant}/>)
         
         return(
         <div>
