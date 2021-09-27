@@ -2,7 +2,7 @@ import React from 'react';
 
 const Plant = ({plant}) =>
     
-    <div class="a" >
+    <div className="a" >
         <h3> {plant.name} </h3>
         <h4> {plant.family} </h4>
         <p > {plant.color} </p>

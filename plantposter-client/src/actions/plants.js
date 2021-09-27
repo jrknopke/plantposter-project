@@ -23,7 +23,7 @@ export const createPlant = (plant) => {
                 'Content-type': 'application/json',
                 'accept': 'application/json'
             },
-            body: JSON.stringify({plant}),
+            body: JSON.stringify(plant),
         })
         .then(resp => resp.json)
         .then(plant => {

@@ -17,7 +17,7 @@ export class PlantForm extends Component {
     }
 
     handleOnChange = event => {
-        this.setState({[event.target.name]: [event.target.value]})
+        this.setState({[event.target.name]: event.target.value})
     }
 
     handleOnSubmit = event => {
@@ -28,7 +28,7 @@ export class PlantForm extends Component {
             family: '',
             color: ''
         })
-        this.props.history.push('/plants');
+        // this.props.history.push('/plants');
     }
 
     render() {
@@ -36,12 +36,12 @@ export class PlantForm extends Component {
             <div>
                 <form onSubmit={this.handleOnSubmit}>
                     <p>
+                        <label> Plant Name: </label>
                         <input
                         name="name"
                         type="text"
                         value={this.state.name}
-                        onChange={(event) => this.handleOnChange(event)}
-                        placeholder="Plant Name" />
+                        onChange={(event) => this.handleOnChange(event)}/>
                     </p>
                     <p>
                         <label> Family: </label>
@@ -53,15 +53,16 @@ export class PlantForm extends Component {
                             <option value="tree"> Tree </option>
                             <option value="flower"> Flower </option>
                             <option value="food"> Food </option>
+                            <option value="succulent"> Succulent </option>
                         </select>
                     </p>
                     <p>
+                        <label> Plant Color: </label>
                         <input
                         name="color"
                         type="text"
                         value={this.state.color}
-                        onChange={(event) => this.handleOnChange(event)}
-                        placeholder="Plant Color" />
+                        onChange={(event) => this.handleOnChange(event)}/>
                     </p>
                     <input type="submit" value="ADD PLANT"/>
                 </form>
