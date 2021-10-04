@@ -1,9 +1,8 @@
 import React from 'react';
 import DeleteButton from './DeleteButton';
-import { Link } from 'react-router-dom';
 
 export default function Plant(props) {
-    const { id, name, family, color } = props.plant
+    const { name, family, color } = props.plant
     
     return(
     <div className="a" >

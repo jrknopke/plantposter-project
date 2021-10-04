@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchPlants } from '../actions/plants';
 import Plant from '../components/Plant';
+import HomeButton from '../components/HomeButton';
 
 class PlantsContainer extends Component {
     componentDidMount(){
@@ -16,6 +17,7 @@ class PlantsContainer extends Component {
         return(
         <div>
             <h2> Plants </h2>
+            <HomeButton/>
             <div>
                 { plants }
             </div>
