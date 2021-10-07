@@ -10,28 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_125115) do
-
-  create_table "gardeners", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "gardens", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "gardens_plants", force: :cascade do |t|
-    t.integer "garden_id"
-    t.integer "plant_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["garden_id"], name: "index_gardens_plants_on_garden_id"
-    t.index ["plant_id"], name: "index_gardens_plants_on_plant_id"
-  end
+ActiveRecord::Schema.define(version: 2021_10_07_173627) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
