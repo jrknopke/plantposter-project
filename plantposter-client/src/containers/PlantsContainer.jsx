@@ -6,12 +6,12 @@ import Plant from '../components/Plant';
 import HomeButton from '../components/HomeButton';
 
 class PlantsContainer extends Component {
+    
     componentDidMount(){
         this.props.fetchPlants()
     }
 
     render(){
-        // debugger;
         const plants = this.props.plants.map((plant) => <Plant key= {plant.name} plant = {plant}/>)
         
         return(

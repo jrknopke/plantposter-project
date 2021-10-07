@@ -12,7 +12,7 @@ export class PlantForm extends Component {
 
     constructor(){
         super();
-        this.handleOnChange.bind(this);
+        // this.handleOnChange.bind(this);
         this.handleOnSubmit.bind(this);
     }
 
