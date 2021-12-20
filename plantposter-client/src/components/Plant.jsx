@@ -5,7 +5,7 @@ export default function Plant(props) {
     const { name, family, color } = props.plant
     
     return(
-    <div className="a" >
+    <div className='a'>
         <h3> {name} </h3>
         <h4> {family} </h4>
         <p > {color} </p>
