@@ -15,10 +15,10 @@ class PlantsContainer extends Component {
         const plants = this.props.plants.map((plant) => <Plant key= {plant.name} plant = {plant}/>)
         
         return(
-        <div class="plant_wrapper">
+        <div >
             <h2> Plants </h2>
             <HomeButton/>
-            <div>
+            <div class="plant_wrapper">
                 { plants }
             </div>
         </div>

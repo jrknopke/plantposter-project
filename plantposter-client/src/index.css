@@ -13,26 +13,32 @@ code {
     monospace;
 }
 
-a {
-  text-transform: capitalize;
-  background-color: darkolivegreen;
-  margin: 0 auto;
-  padding: 0 2em;
-}
-
-plant {
+/* a {
   margin: 0 auto;
   padding: 0 2em;
   text-transform : capitalize;
   background-color: darkolivegreen;
+} */
+
+.plant {
+  margin: 1em;
+  padding: 2em;
+  text-align: left;
+  text-decoration-style: wavy;
+  text-transform : capitalize;
+  background-color: rgb(127, 200, 9);
 }
 
-plant_wrapper {
+.plant_wrapper {
   text-align: center;
-  max-width: 950px;
+  max-width: 1000px;
   margin: 0 auto;
-  background-color: darkolivegreen;
-  border: 1px solid #e6e6e6;
-  padding: 40px 25px;
-  margin-top: 50px;
+  background-color: rgb(108, 144, 46);
+  /* border: 5px solid #e6e6e6; */
+  padding: 25px 25px;
+  margin-top: 1em;
+}
+
+.nav_bar{
+  all: revert;
 }
