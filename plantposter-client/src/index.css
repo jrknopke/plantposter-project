@@ -13,6 +13,13 @@ code {
     monospace;
 }
 
+a {
+  text-transform: capitalize;
+  background-color: darkolivegreen;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+
 plant {
   margin: 0 auto;
   padding: 0 2em;
